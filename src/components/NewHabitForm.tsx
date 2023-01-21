@@ -1,6 +1,7 @@
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { Check } from 'phosphor-react';
 import { FormEvent, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { api } from '../lib/axios';
 
 export function NewHabitForm() {
@@ -32,7 +33,14 @@ export function NewHabitForm() {
 			.then(() => {
 				setTitle('');
 				setWeekDays([]);
-				alert('Hábito criado com sucesso!');
+				toast('Ebaa hábito criado com sucesoo', {
+					icon: '😄',
+					style: {
+						borderRadius: '10px',
+						background: '#333',
+						color: '#fff',
+					},
+				});
 			});
 	}
 
